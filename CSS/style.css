@@ -41,3 +41,106 @@ body {
     border-radius: 1em;
     background-color: #9CA3AF;
 }
+
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: url(../IMG/pencils.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width: 100vw;
+}
+/* Hero */
+.heroquote {
+    position: absolute;
+    top: 50%;
+    left:35%;
+    transform: translate(-50%, -50%);
+    margin-left: 2em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
+    color: #fff;
+    font-style: italic;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+}
+
+
+
+.CalltoAction {
+  padding: 0em 2em;
+  border: none;
+  outline: none;
+  width: 15rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin:30px 10px;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.CalltoAction:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.CalltoAction:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #323232;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* end Hero */
