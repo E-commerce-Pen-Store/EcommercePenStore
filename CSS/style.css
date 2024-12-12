@@ -144,3 +144,40 @@ body {
 }
 
 /* end Hero */
+
+/* footer start */
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 4.5em;
+  background-color: #EAE7DC;
+  margin-top: 2em;
+}
+
+#footer-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+#footer .Länkar {
+  text-decoration: none;
+  margin: 0 1em;
+  font-size: 1em;
+  color: #fff;
+  border: 1px solid #9CA3AF;
+  padding: 0.4em 0.8em;
+  border-radius: 1em;
+  background-color: #9CA3AF;
+  transition: background-color 0.3s ease;
+}
+
+#footer .Länkar:hover {
+  background-color: #7A8A99;
+}
+
+/* footer end */
