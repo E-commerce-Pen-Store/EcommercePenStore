@@ -35,11 +35,11 @@ async function renderProdukter() {
 
         produktElement.innerHTML = `
         <div class="produktItem">
-            <img src="${item.image}" alt="Produkt Bild">
+            <img class="produktBild" src="${item.image}" alt="Produkt Bild">
             <div class="itemDesc">
-                <h2>${item.name}</h2>
-                <span>${item.price.$numberDecimal}$</span>
-                <a href="">Visa Vara</a> 
+                <h2 class="produktNamn">${item.name}</h2>
+                <span class="pris">${item.price.$numberDecimal}$</span>
+                <a class="visaVara-knapp" href="">Visa Penna</a> 
             </div>
         </div>
         `
