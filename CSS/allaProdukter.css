@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#produktSidaTitel {
+    text-align: center;
+    margin: 1em;
+}
+
+
+#produkt-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 45em;
+}
+
+.produktdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 25%;
+    border: 3px solid #EAE7DC;
+    height: 20em;
+    margin-top: 3em;
+    border-radius: 10px;
+
+}
+
+.produktBild {
+    display: block;
+    width: 6em;
+    height: 10em;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    width: 100%;
+}
+
+
+.itemDesc {
+    border: 3px 0 solid lightgray;
+    background-color: #EAE7DC;
+    width: 100%;
+
+}
+
+
+.produktNamn {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.pris {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    display: block;
+
+}
+
+.visaVara-knapp {
+    padding: 0.5em;
+    border: 1px solid #EAE7DC;
+    border-radius: 10px;
+    /* margin-left: 40%; */
+    background-color: lightgray;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin-top: 1em;
+
+}
