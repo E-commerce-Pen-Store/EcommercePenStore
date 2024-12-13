@@ -6,5 +6,5 @@ export function addToCart(produktId) {
     varukorg.push(produktId);
     localStorage.setItem('varukorg', JSON.stringify(varukorg)); 
 }
-
+window.varukorg = varukorg;
 window.addToCart = addToCart;
