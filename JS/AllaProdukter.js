@@ -19,6 +19,7 @@ async function getData() {
 }
 
 
+
 async function renderProdukter() {
     const produkt = await getData()
 
