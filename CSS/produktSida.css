@@ -1,0 +1,12 @@
+#produkt {
+    margin: 10rem 0 20rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+#pris {
+    margin-left: 8rem;
+
+}
