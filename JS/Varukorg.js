@@ -1,7 +1,7 @@
 
 import { varukorg } from './addedproducts.js'; 
 import { getData } from './api.js'; 
-
+console.log(varukorg)
 async function sumProducts() {
     const productCounts = varukorg.reduce((acc, produktId) => {
         acc[produktId] = (acc[produktId] || 0) + 1;
@@ -12,50 +12,54 @@ async function sumProducts() {
     const Totalcheckout = document.getElementById("produkt-total");
 
     kassalista.innerHTML = `
-                <tr>
-                    <th>Produkt</th>
-                    <th>Antal</th>
-                    <th>Pris st</th>
-                    <th>Totalt</th>
-                </tr>`;
-    
-    let totalcheckoutPrice = 0;
+    <tr>
+        <th>Produkt</th>
+        <th>Antal</th>
+        <th>Pris st</th>
+        <th>Totalt</th>
+    </tr>
+`;
 
-    for (const produktId of Object.keys(productCounts)) {
-        try {
-            const data = await getData(`https://ecommerce-api-penstore.vercel.app/products/${produktId}`);
-            
+let rows = '';
+let totalcheckoutPrice = 0;
 
-            const totalPrice = (parseFloat(data.price.$numberDecimal) * productCounts[produktId]).toFixed(2);
+for (const produktId of Object.keys(productCounts)) {
+    try {
+        const data = await getData(`https://ecommerce-api-penstore.vercel.app/products/${produktId}`);
+        const totalPrice = (parseFloat(data.price.$numberDecimal) * productCounts[produktId]).toFixed(2);
+        totalcheckoutPrice += parseFloat(totalPrice);
 
-         totalcheckoutPrice += parseFloat(totalPrice);
-
-            kassalista.innerHTML += `
-                <tr id="row-${produktId}">
-                    <td>${data.name}</td>
-                    <td>
-                        <input type="number" value="${productCounts[produktId]}" min="0" data-id="${produktId}" class="Productcount" oninput="updateQuantity('${produktId}', this.value)">
-                    </td>
-                    <td class="unit-price">${data.price.$numberDecimal} kr</td>
-                    <td class="total-price">${totalPrice}kr</td>
-                </tr>
-            `;
-        } catch (error) {
-            console.error(`Fel vid hämtning av produkt ${produktId}:`, error);
-        }
+        rows += `
+            <tr id="row-${produktId}">
+                <td>${data.name}</td>
+                <td>
+                    <input type="number" value="${productCounts[produktId]}" min="0" data-id="${produktId}" class="Productcount" oninput="updateQuantity('${produktId}', this.value)">
+                </td>
+                <td class="unit-price">${data.price.$numberDecimal} kr</td>
+                <td class="total-price">${totalPrice} kr</td>
+                <td><button type="button" onclick="deleteProduct('${produktId}')">Ta bort</button></td>
+            </tr>
+        `;
+    } catch (error) {
+        console.error(`Fel vid hämtning av produkt ${produktId}:`, error);
     }
-                Totalcheckout.innerHTML += ` 
-                            <tr> <td colspan="3"><strong>Total:</strong></td> 
-                            <td class="grand-total"><strong>${totalcheckoutPrice.toFixed(2)} $</strong>
-                            </td> </tr>
-                             `;
+}
+
+kassalista.innerHTML += rows;
+
+Totalcheckout.innerHTML = `
+    <tr>
+        <td colspan="3">Total:</td>
+        <td class="grand-total"><strong>${totalcheckoutPrice.toFixed(2)} kr</strong></td>
+    </tr>
+`;
+
 }
 
 function updateQuantity(produktId, newQuantity) {
     newQuantity = parseInt(newQuantity);
     const currentCount = varukorg.filter(id => id === produktId).length;
     const difference = newQuantity - currentCount;
-    console.log(`Uppdaterar varukorgen för produkt ID: ${produktId} med skillnad: ${difference}`);
 
     if (difference > 0) {
         for (let i = 0; i < difference; i++) {
@@ -80,7 +84,7 @@ function updateQuantity(produktId, newQuantity) {
             const unitPriceElement = row.querySelector('.unit-price');
             const totalPriceElement = row.querySelector('.total-price');
             if (unitPriceElement && totalPriceElement) {
-                const unitPrice = parseFloat(unitPriceElement.textContent.replace(' $', '')); 
+                const unitPrice = parseFloat(unitPriceElement.textContent.replace(' $', 'kr')); 
                 const totalPrice = (unitPrice * newQuantity).toFixed(2);
                 totalPriceElement.textContent = `${totalPrice} kr`;
             } else {
@@ -90,8 +94,36 @@ function updateQuantity(produktId, newQuantity) {
     } else {
         console.error("Kan inte hitta row element");
     }
+    updateGrandTotal();
 }
 
+function updateGrandTotal() { 
+    const totalPrices = Array.from(document.querySelectorAll('.total-price')).map(el => parseFloat(el.textContent.replace(' $', '')));
+     const grandTotal = totalPrices.reduce((sum, price) => sum + price, 0); const grandTotalElement = document.querySelector('.grand-total');
+      if (grandTotalElement) { grandTotalElement.textContent = `${grandTotal.toFixed(2)} kr`; } }
+
+      function deleteProduct(produktId) {
+        for (let i = varukorg.length - 1; i >= 0; i--) {
+            if (varukorg[i] === produktId) {
+                varukorg.splice(i, 1);
+            }
+        }
+    
+        localStorage.setItem('varukorg', JSON.stringify(varukorg));
+    
+        const row = document.getElementById(`row-${produktId}`);
+        if (row) {
+            row.remove();
+        } else {
+            console.error("Kan inte hitta row element");
+        }
+        updateGrandTotal()
+    }
+    
+    
+
 window.updateQuantity = updateQuantity;
+window.updateGrandTotal = updateGrandTotal;
+window.deleteProduct = deleteProduct;
 
 sumProducts();

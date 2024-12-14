@@ -3,7 +3,7 @@ Har strukturerat om filerna i moduler så vi bara kan importera vissa functioner
 mest för att träna lite på att dela upp filerna */
 
 import { getData } from './api.js';
-import { varukorg, addToCart } from './addedproducts.js';
+import { addToCart } from './addedproducts.js';
                
 const produktLista = document.getElementById("produkt-list")
 async function renderProdukter() {
@@ -27,7 +27,7 @@ async function renderProdukter() {
                 <h2 class="produktNamn">${item.name}</h2>
                 <span class="pris">${item.price.$numberDecimal}$</span>
                 <a class="visaVara-knapp" href="">Visa Penna</a>
-                <a class="Kop-knapp" href="#" onclick="addToCart('${item._id}')">Köp</a> 
+                <a class="Kop-knapp" href="#" onclick="addToCart('${item._id}', event)">Köp</a> 
 
             </div>
         </div>
