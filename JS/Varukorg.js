@@ -9,19 +9,26 @@ async function sumProducts() {
     }, {});
 
     const kassalista = document.getElementById("Produkt-kassalista");
+    const Totalcheckout = document.getElementById("produkt-total");
+
     kassalista.innerHTML = `
                 <tr>
                     <th>Produkt</th>
                     <th>Antal</th>
-                    <th>Pris</th>
+                    <th>Pris st</th>
+                    <th>Totalt</th>
                 </tr>`;
+    
+    let totalcheckoutPrice = 0;
 
     for (const produktId of Object.keys(productCounts)) {
         try {
             const data = await getData(`https://ecommerce-api-penstore.vercel.app/products/${produktId}`);
-            console.log(data);
+            
 
             const totalPrice = (parseFloat(data.price.$numberDecimal) * productCounts[produktId]).toFixed(2);
+
+         totalcheckoutPrice += parseFloat(totalPrice);
 
             kassalista.innerHTML += `
                 <tr id="row-${produktId}">
@@ -29,14 +36,19 @@ async function sumProducts() {
                     <td>
                         <input type="number" value="${productCounts[produktId]}" min="0" data-id="${produktId}" class="Productcount" oninput="updateQuantity('${produktId}', this.value)">
                     </td>
-                    <td class="unit-price">${data.price.$numberDecimal}</td>
-                    <td class="total-price">${totalPrice}</td>
+                    <td class="unit-price">${data.price.$numberDecimal} kr</td>
+                    <td class="total-price">${totalPrice}kr</td>
                 </tr>
             `;
         } catch (error) {
             console.error(`Fel vid hämtning av produkt ${produktId}:`, error);
         }
     }
+                Totalcheckout.innerHTML += ` 
+                            <tr> <td colspan="3"><strong>Total:</strong></td> 
+                            <td class="grand-total"><strong>${totalcheckoutPrice.toFixed(2)} $</strong>
+                            </td> </tr>
+                             `;
 }
 
 function updateQuantity(produktId, newQuantity) {
@@ -70,7 +82,7 @@ function updateQuantity(produktId, newQuantity) {
             if (unitPriceElement && totalPriceElement) {
                 const unitPrice = parseFloat(unitPriceElement.textContent.replace(' $', '')); 
                 const totalPrice = (unitPrice * newQuantity).toFixed(2);
-                totalPriceElement.textContent = `${totalPrice} $`;
+                totalPriceElement.textContent = `${totalPrice} kr`;
             } else {
                 console.error("Kan inte hitta unit-price eller total-price element");
             }
