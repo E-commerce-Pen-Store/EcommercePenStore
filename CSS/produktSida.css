@@ -1,0 +1,52 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+#produkt {
+    margin: 10rem 0 20rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    border: 2px solid #EAE7DC;
+    width: 60vw;
+    border-radius: 10px;
+}
+
+#produktBild {
+    width: 50%;
+
+
+}
+
+#produktInfo {
+    /* border: 1px solid black; */
+    height: 30em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#pris {
+    margin: 30px 0;
+    text-align: end;
+    font-size: 1.5rem;
+}
+
+#produktBeskrivning {}
+
+.CTA {
+    margin: 80px 0 50px 32%;
+    border: 1px solid #EAE7DC;
+    width: 10rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: #EAE7DC;
+    justify-self: center;
+}

@@ -39,7 +39,7 @@ async function renderProdukter() {
             <div class="itemDesc">
                 <h2 class="produktNamn">${item.name}</h2>
                 <span class="pris">${item.price.$numberDecimal}$</span>
-                <a class="visaVara-knapp" href="">Visa Penna</a> 
+                <a class="visaVara-knapp" href="/HTML/produktSida.HTML?id=${item._id}">Visa Penna</a> 
             </div>
         </div>
         `
