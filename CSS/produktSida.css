@@ -13,13 +13,13 @@ main {
     gap: 5rem;
     /* border: 2px solid #EAE7DC; */
     width: 60vw;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 20px 20px 20px gray;
 }
 
 #produktBild {
     width: 50%;
-    border-radius: 10px;
+    border-radius: 20px;
 
 }
 
@@ -39,6 +39,7 @@ main {
 
 #produktBeskrivning {
     margin-right: 20px;
+
 }
 
 .CTA {
