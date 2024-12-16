@@ -28,7 +28,7 @@ async function getProdukt() {
         <img src="${data.image}" alt="Produkt bild" id="produktBild">
             <div id="produktInfo">
                 <h2 id="produktNamn">${data.name}</h2>
-                <span id="pris">${data.price.$numberDecimal}$</span>
+                <span id="pris">$${data.price.$numberDecimal}</span>
                 <p id="produktBeskrivning">${description}</p>
                 <a class="CTA" href="" onclick="addToCart('${productId}', event)">Add To Cart</a>             
             </div>
