@@ -1,26 +1,13 @@
+/* 
+Har strukturerat om filerna i moduler så vi bara kan importera vissa functioner till andra sidor,
+mest för att träna lite på att dela upp filerna */
+
+import { getData } from './api.js';
+import { addToCart } from './addedproducts.js';
+               
 const produktLista = document.getElementById("produkt-list")
-
-const url = "http://ecommerce-api-penstore.vercel.app/products"
-
-async function getData() {
-    try {
-        const response = await fetch(url)
-
-        if (!response.ok) {
-            throw new Error(`${response.status} Something went wrong, couldn't fetch data!`)
-        }
-
-        const data = await response.json()
-        return data
-
-    } catch (error) {
-        console.error(error)
-    }
-}
-
-
 async function renderProdukter() {
-    const produkt = await getData()
+    const produkt = await getData(`http://ecommerce-api-penstore.vercel.app/products`)
 
     if (!produkt) {
         throw new Error("Cannot render right now!")
@@ -39,7 +26,10 @@ async function renderProdukter() {
             <div class="itemDesc">
                 <h2 class="produktNamn">${item.name}</h2>
                 <span class="pris">${item.price.$numberDecimal}$</span>
-                <a class="visaVara-knapp" href="/HTML/produktSida.HTML?id=${item._id}">Visa Penna</a> 
+
+                 <a class="visaVara-knapp" href="/HTML/produktSida.HTML?id=${item._id}">Visa Penna</a> 
+                <a class="Kop-knapp" href="#" onclick="addToCart('${item._id}', event)">Köp</a> 
+
             </div>
         </div>
         `
@@ -51,3 +41,8 @@ async function renderProdukter() {
 }
 
 renderProdukter()
+
+
+
+
+

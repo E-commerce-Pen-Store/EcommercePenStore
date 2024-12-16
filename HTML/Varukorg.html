@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alla Produkter</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-<link rel="stylesheet" href="../CSS/allaProdukter.css">
+    <link rel="stylesheet" href="../CSS/Varukorg.css">
 </head>
 <body>
     <header>  
@@ -17,23 +16,36 @@
             <ul id="nav-list">
                 <li><a href="index.html" class="Länkar">Hem</a></li>
                 <li><a href="AllaProdukter.html" class="Länkar">Produkter</a></li>
-
                 <li><a href="" class="Länkar">Kontakta oss</a></li>
                 <li><a href="Varukorg.html" class="Länkar">Varukorg</a></li>
-          <li><a href="Kontakt.html" class="Länkar">Kontakta oss</a></li>
-
             </ul>
         </nav>
     </header>
 
     <!-- SLUTET AV NAVBAR -->
+    <div id="wrapper-kundkorg">
+        <section id="left-produkter">
+            <h2>Dina produkter</h2>
+            <table id="Produkt-kassalista">
+                <tr>
+                    <th>Produkt</th>
+                    <th>Antal</th>
+                    <th>Pris</th>
+                </tr>
+                
+            </table>
+        </section>
+        <section id="right-totalt">
+            <h2 class="">Summering</h2>
+            
+            <table id="produkt-total">
+            </table>
+            <Button id="checkout-button">Gå till kassan</Button>
 
-    <h1 id="produktSidaTitel">Alla Produkter</h1>
-    <section id="produkt-list">
+        </section>
+    </div>
 
-    </section>
-
-<!-- BÖRJAN AV FOOTER -->
+    <!-- BÖRJAN AV FOOTER -->
 
 
     <footer id="footer">
@@ -41,11 +53,10 @@
           <li><a class="Länkar" href="#">Hem</a></li>
           <li><a class="Länkar" href="#">Produkter</a></li>
           <li><a class="Länkar" href="#">Kontakta oss</a></li>
-          
         </ul>
         <p style="color: lightslategray;">Pen Store ©</p>
       </footer>
 
-    <script type="module" src="../JS/AllaProdukter.js"></script>
+      <script type="module" src="../JS/Varukorg.js"></script>
 </body>
 </html>
