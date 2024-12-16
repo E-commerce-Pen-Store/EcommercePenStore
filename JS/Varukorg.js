@@ -12,8 +12,9 @@ async function sumProducts() {
     const Totalcheckout = document.getElementById("produkt-total");
 
     kassalista.innerHTML = `
-    <tr>
-        <th>Produkt</th>
+    <tr class="Head-table">
+        <th></th>
+        <th class="Title-product">Produkter</th>
         <th>Antal</th>
         <th>Pris st</th>
         <th>Totalt</th>
@@ -26,18 +27,25 @@ let totalcheckoutPrice = 0;
 for (const produktId of Object.keys(productCounts)) {
     try {
         const data = await getData(`https://ecommerce-api-penstore.vercel.app/products/${produktId}`);
+        console.log(data)
         const totalPrice = (parseFloat(data.price.$numberDecimal) * productCounts[produktId]).toFixed(2);
         totalcheckoutPrice += parseFloat(totalPrice);
-
+        
         rows += `
-            <tr id="row-${produktId}">
-                <td>${data.name}</td>
-                <td>
+            <tr class="Item-table" id="row-${produktId}" >
+            <td><img class="Item-img" src="${data.image}"></td>
+                <td class="Item-name">${data.name}</td>
+                <td class="Item-counter">
                     <input type="number" value="${productCounts[produktId]}" min="0" data-id="${produktId}" class="Productcount" oninput="updateQuantity('${produktId}', this.value)">
                 </td>
                 <td class="unit-price">${data.price.$numberDecimal} kr</td>
                 <td class="total-price">${totalPrice} kr</td>
-                <td><button type="button" onclick="deleteProduct('${produktId}')">Ta bort</button></td>
+                <td>
+                    <button class="Delete-Item" type="button" onclick="deleteProduct('${produktId}')">
+                    <span class="material-symbols-outlined delete-icon">
+                    backspace
+                    </span></button>
+                </td>
             </tr>
         `;
     } catch (error) {
@@ -48,8 +56,8 @@ for (const produktId of Object.keys(productCounts)) {
 kassalista.innerHTML += rows;
 
 Totalcheckout.innerHTML = `
-    <tr>
-        <td colspan="3">Total:</td>
+    <tr class="Total-price">
+        <td><strong>Total:</strong></td>
         <td class="grand-total"><strong>${totalcheckoutPrice.toFixed(2)} kr</strong></td>
     </tr>
 `;

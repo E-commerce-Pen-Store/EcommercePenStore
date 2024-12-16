@@ -1,3 +1,5 @@
+import { addToCart } from './addedproducts.js';
+
 const produktSektion = document.getElementById("produkt");
 const params = new URLSearchParams(window.location.search)
 const productId = params.get("id")
@@ -28,7 +30,7 @@ async function getProdukt() {
                 <h2 id="produktNamn">${data.name}</h2>
                 <span id="pris">${data.price.$numberDecimal}$</span>
                 <p id="produktBeskrivning">${description}</p>
-                <a class="CTA" href="">Add To Cart</a>             
+                <a class="CTA" href="" onclick="addToCart('${productId}', event)">Add To Cart</a>             
             </div>
         `
 
