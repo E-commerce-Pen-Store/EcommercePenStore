@@ -14,7 +14,7 @@ async function sumProducts() {
     kassalista.innerHTML = `
     <tr class="Head-table">
         <th></th>
-        <th class="Title-product">Produkt</th>
+        <th class="Title-product">Produkter</th>
         <th>Antal</th>
         <th>Pris st</th>
         <th>Totalt</th>
@@ -56,8 +56,8 @@ for (const produktId of Object.keys(productCounts)) {
 kassalista.innerHTML += rows;
 
 Totalcheckout.innerHTML = `
-    <tr>
-        <td colspan="3">Total:</td>
+    <tr class="Total-price">
+        <td><strong>Total:</strong></td>
         <td class="grand-total"><strong>${totalcheckoutPrice.toFixed(2)} kr</strong></td>
     </tr>
 `;
