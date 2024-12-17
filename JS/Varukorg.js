@@ -1,5 +1,5 @@
 
-import { varukorg } from './addedproducts.js'; 
+import { varukorg , cartCount} from './addedproducts.js'; 
 import { getData } from './api.js'; 
 console.log(varukorg)
 async function sumProducts() {

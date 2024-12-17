@@ -10,38 +10,109 @@ body {
     background-color: #FDFCF6;
 }
 
+#Styling-div {
+  width: 100%;
+  height: 0.7rem;
+  background: linear-gradient(to right, #0088aa, #800080,#ffff00);
+  background-size: 200% 200%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+@keyframes gradientAnimation { 
+0% { background-position: 0% 50%;}
+50% { background-position: 100% 50%;} 
+100% { background-position: 0% 50%;}
+}
+
+#Logotype {
+  height: 50px;
+  overflow: hidden;
+  margin-left: 2rem;
+}
+
 #navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 4.5em;
-    background-color: #EAE7DC;
+    background-color: #F0F0F0;
+    border-bottom: 1px solid #000000;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
 }
 
 #nav-sök {
+  
     padding: 1em 2em 1em 0.7em;
     border-radius: 2em;
     border: 0.5em #fff;
 }
 
 #nav-list {
+  position: relative;
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+#varu-position {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+}
+ 
+#varu-position .cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px; 
+  background-color: red; 
+  color: white; 
+  border-radius: 50%;
+  padding: 4px 8px; 
+  font-size: 10px; 
+  display: none;
+}
+
+#varu-position .cart-count.visible {
+  display: inline; 
+}
+
+.Länkar.selected {
+  color: #800080;
 }
 
 .Länkar {
     text-decoration: none;
     margin-right: 2em;
     font-size: 1.2em;
-    color: #fff;
-    border: 1px solid #9CA3AF;
-    padding: 0.4em 0.8em;
-    border-radius: 1em;
-    background-color: #9CA3AF;
+    color: #232323;
+    border-bottom: 1px solid #9CA3AF;
+    padding: 0em 0.8em;
+    transition: all 0.2s ease;
 }
+
+
+.Länkar.Länkett:hover { border-bottom: 5px solid #0088aa; }
+.Länkar.Länktvå:hover { border-bottom: 5px solid #800080; }
+.Länkar.Länktre:hover { border-bottom: 5px solid #ffff00; }
+
+.material-symbols-outlined.item-shoppingcart {
+  font-size: 30px;
+  color:#000000;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 30;
+  transition: all 0.2s ease;
+}
+.material-symbols-outlined.item-shoppingcart:hover{
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 30;
+}
+
+/* Hero */
 
 .hero-section {
     position: relative;
@@ -51,9 +122,8 @@ body {
     background-size: cover;
     background-position: center;
     height: 90vh;
-    width: 100vw;
+    width: 100%;
 }
-/* Hero */
 .heroquote {
     position: absolute;
     top: 50%;
@@ -152,9 +222,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 4.5em;
-  background-color: #EAE7DC;
+  background-color: #F0F0F0;
  /*  margin-top: 2em; */
 }
 
