@@ -28,12 +28,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex: 0 0 25%;
-    border: 3px solid #EAE7DC;
+    flex: 0 0 30%;
+    /* border: 3px solid #EAE7DC; */
     height: 20em;
     margin-top: 3em;
     border-radius: 10px;
-
+    width: 30em;
+    box-shadow: 20px 20px 20px #EAE7DC;
 }
 
 .produktBild {
@@ -48,7 +49,7 @@
 
 .itemDesc {
     border: 3px 0 solid lightgray;
-    background-color: #EAE7DC;
+    /* background-color: #EAE7DC; */
     width: 100%;
 
 }
@@ -73,7 +74,7 @@
     border: 1px solid #EAE7DC;
     border-radius: 10px;
     /* margin-left: 40%; */
-    background-color: lightgray;
+    background-color: #EAE7DC;
     text-decoration: none;
     color: black;
     display: inline-block;
