@@ -231,36 +231,53 @@ header {
 /* footer start */
 
 #footer {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
   align-items: center;
-  width: 100%;
-  height: 4.5em;
-  background-color: #F0F0F0;
- /*  margin-top: 2em; */
+  height: auto;
+  background-color: #464646;
+ /*  padding: 20px; */
 }
 
 #footer-list {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   padding: 0;
+  margin: 0;
+  grid-row: 2 / 3; 
 }
 
-#footer .Länkar {
-  text-decoration: none;
-  margin: 0 1em;
-  font-size: 1em;
-  color: #fff;
-  border: 1px solid #9CA3AF;
-  padding: 0.4em 0.8em;
-  border-radius: 1em;
-  background-color: #9CA3AF;
-  transition: background-color 0.3s ease;
+.Länkar-container {
+  height: 50px;
 }
 
-#footer .Länkar:hover {
-  background-color: #7A8A99;
+.Länkar {
+  border:none;
+  transition: all 0.3s ease;
 }
 
-/* footer end */
+.Länkar:hover {
+  filter:grayscale()
+}
+
+#footer .Länkar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-text {
+  color: #0088aa;
+  grid-row: 3 / 4; 
+  justify-self: center;
+  padding-top: 5%;
+}
+
+.Styling-div {
+  background-color: #323232;
+  height: 1px;
+  margin: 20px 0;
+}
