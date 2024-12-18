@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/produktSida.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=backspace,shopping_cart" />
 </head>
 <body>
     <header>  
+        <div id="Styling-div"></div>
         <nav id="navbar">
-            <img src="" alt="Logo" />
-            <label for="">
-                <input id="nav-sök" type="text" placeholder="Sök...">
-            </label>
+            <img src="../IMG/Icons/bitmap.png" alt="Logo" id="Logotype"/>
+            <!-- <label for=""> -->
             <ul id="nav-list">
-                <li><a href="index.html" class="Länkar">Hem</a></li>
-                <li><a href="AllaProdukter.html" class="Länkar">Produkter</a></li>
-                <li><a href="Kontakt.html" class="Länkar">Kontakta oss</a></li>
-                <li><a href="Varukorg.html" class="Länkar">Varukorg</a></li>
+                <li><a href="index.html" class="Länkar Länkett selected"><strong>Hem</strong></a></li>
+                <li><a href="AllaProdukter.html" class="Länkar Länktvå"><strong>Produkter</strong></a></li>
+                <li><a href="Kontakt.html" class="Länkar Länktre"><strong>Kontakta oss</strong></a></li>
+                <li ><a href="Varukorg.html" id="varu-position"><span class="material-symbols-outlined item-shoppingcart">
+                  shopping_cart
+                  </span>
+                  <span class="cart-count" id="cart-count">0</span></a></li>
             </ul>
         </nav>
-        </header>
+    </header>
     <!-- SLUTET AV NAVBAR -->
 
     <main>
@@ -47,5 +50,6 @@
         <p style="color: lightslategray;">Pen Store ©</p>
       </footer>
       <script type="module" src="../JS/produktSida.js"></script>
+      <script type="module" src="../JS/Main.js"></script>
 </body>
 </html>

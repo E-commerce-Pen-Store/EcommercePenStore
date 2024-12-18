@@ -1,9 +1,7 @@
-/* 
-Har strukturerat om filerna i moduler så vi bara kan importera vissa functioner till andra sidor,
-mest för att träna lite på att dela upp filerna */
 
 import { getData } from './api.js';
-import { addToCart } from './addedproducts.js';
+import { addToCart, cartCount } from './addedproducts.js';
+
 
 const produktLista = document.getElementById("produkt-list")
 async function renderProdukter() {

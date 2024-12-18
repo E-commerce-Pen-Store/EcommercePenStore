@@ -5,24 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Välkommna Till Pen Store</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>  
+        <div id="Styling-div"></div>
         <nav id="navbar">
-            <img src="" alt="Logo" />
-            <label for="">
-                <input id="nav-sök" type="text" placeholder="Sök...">
-            </label>
+            <img src="../IMG/Icons/bitmap.png" alt="Logo" id="Logotype"/>
+            <h2 class="logo-text">Pen store</h2>
             <ul id="nav-list">
-
-                <li><a href="index.html" class="Länkar">Hem</a></li>
-                <li><a href="AllaProdukter.html" class="Länkar">Produkter</a></li>
-                <li><a href="Kontakt.html" class="Länkar">Kontakta oss</a></li>
-                <li><a href="Varukorg.html" class="Länkar">Varukorg</a></li>
-
+                <li><a href="index.html" class="Länkar Länkett selected"><strong>Hem</strong></a></li>
+                <li><a href="AllaProdukter.html" class="Länkar Länktvå"><strong>Produkter</strong></a></li>
+                <li><a href="Kontakt.html" class="Länkar Länktre"><strong>Kontakta oss</strong></a></li>
+                <li ><a href="Varukorg.html" id="varu-position"><span class="material-symbols-outlined item-shoppingcart">
+                  shopping_cart
+                  </span>
+                  <span class="cart-count" id="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -34,12 +31,14 @@
         </blockquote>
       </div>
       <footer id="footer">
+        <div id="Styling-div" class="Styling-div"></div>
         <ul id="footer-list">
-          <li><a class="Länkar" href="#">Hem</a></li>
-          <li><a class="Länkar" href="#">Produkter</a></li>
-          <li><a class="Länkar" href="#">Kontakta oss</a></li>
+            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=13912&format=png&color=000000"></a></li>
+            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"></a></li>
+            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=YfCbGWCWcuar&format=png&color=000000"></a></li>
         </ul>
-        <p style="color: lightslategray;">Pen Store ©</p>
-      </footer>
+        <p class="footer-text">Pen Store ©</p>
+    </footer>
+      <script type="module" src="../JS/Main.js"></script>
 </body>
 </html>

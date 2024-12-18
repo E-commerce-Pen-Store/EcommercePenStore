@@ -4,91 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kundtjänst</title>
-   <link rel="stylesheet" href="../CSS/Kontakt.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/Kontakt.css">
+    <style>
+        .neutral-button {
+            background-color: #ddd;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 0.5em 1em;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .neutral-button:hover {
+            background-color: #ccc;
+        }
+    </style>
 </head>
 <body>
+
     <header>  
         <nav id="navbar">
             <div class="logo-container">
                 <a href="index.html">
-                    <img src="../IMG/Logo.png" alt="Logo" />
+                    <img src="../IMG/Icons/bitmap.png" alt="Logo" id="Logotype" />
                 </a>
+                <h2 class="logo-text">Pen store</h2>
             </div>
             <ul id="nav-list">
-                <li><a href="index.html" class="Länkar">Hem</a></li>
-                <li><a href="AllaProdukter.html" class="Länkar">Produkter</a></li>
-                <li><a href="Kontakt.html" class="Länkar">Kontakta oss</a></li>
+                <li><a href="index.html" class="Länkar Länkett"><strong>Hem</strong></a></li>
+                <li><a href="AllaProdukter.html" class="Länkar Länktvå"><strong>Produkter</strong></a></li>
+                <li><a href="Kontakt.html" class="Länkar Länktre selected"><strong>Kontakta oss</strong></a></li>
+                <li><a href="Varukorg.html" id="varu-position">
+                    <span class="material-symbols-outlined item-shoppingcart">
+                      shopping_cart
+                    </span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a></li>
             </ul>
         </nav>
     </header>
-    
 
-    <main>
-        <div class="contact-container">
-            <div class="card contact-info">
-                <div>
-                    <h2>Kontaktinformation</h2>
-                    <ul style="list-style: none;">
-                        <li>Email: <a href="#">support@fake-email.skovde</a></li>
-                        <li>Telefon: +46 123 456 789</li>
-                        <li>Adress: Skövdegatan 2B, 54 321 Skövde</li>
-                    </ul>
+    <main style="padding: 2em;">
+        <div class="contact-container" style="background-color: #f4f4f9; padding: 2em; border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between; gap: 2em;">
+
+                <div class="card contact-info" style="flex: 1; background-color: #ffffff; padding: 1em; border-radius: 8px;">
+                    <section>
+                        <h2>Kontaktinformation</h2>
+                        <ul style="list-style: none;">
+                            <li>Email: <a href="#">support@fake-email.skovde</a></li>
+                            <li>Telefon: +46 123 456 789</li>
+                            <li>Adress: Skövdegatan 2B, 54 321 Skövde</li>
+                        </ul>
+                        <h2>Öppettider</h2>
+                        <p>Måndag - Fredag: 8:00 - 18:00</p>
+                        <p>Lördag: 10:00 - 16:00</p>
+                        <p>Söndag: Stängt</p>
+                    </section>
                 </div>
-                <div>
-                    <h2>Öppettider</h2>
-                    <p>Måndag - Fredag: 8:00 - 18:00</p>
-                    <p>Lördag: 10:00 - 16:00</p>
-                    <p>Söndag: Stängt</p>
+
+                <div class="card" style="flex: 1; background-color: #ffffff; padding: 1em; border-radius: 8px;">
+                    <section>
+                        <h2>Kontaktformulär</h2>
+                        <form action="#" method="post">
+                            <label for="name">Namn:</label><br>
+                            <input type="text" id="name" name="name" required><br>
+                            <label for="email">E-post:</label><br>
+                            <input type="email" id="email" name="email" required><br>
+                            <label for="message">Meddelande:</label><br>
+                            <textarea id="message" name="message" rows="5" required></textarea><br>
+                            <button type="submit" class="neutral-button">Skicka</button>
+                        </form>
+                    </section>
                 </div>
             </div>
-            <div class="card">
-                <h2>Kontaktformulär</h2>
-                <form action="#" method="post">
-                    <label for="name">Namn:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">E-post:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Meddelande:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                    <button type="submit" class="neutral-button">Skicka</button>
-                </form>
-            </div>
-        </div>
 
-        <div class="card" style="margin-top: 2em;">
-            <h2>FAQ</h2>
-            <details>
-                <summary>Hur lång tid tar leverans?</summary>
-                <p>Leverans tar vanligtvis 2-5 arbetsdagar.</p>
-            </details>
-            <details>
-                <summary>Vilka betalningsmetoder accepterar ni?</summary>
-                <p>Vi accepterar kortbetalning, PayPal och Swish.</p>
-            </details>
-            <details>
-                <summary>Hur returnerar jag en produkt?</summary>
-                <p>Kontakta vår kundtjänst för att starta en returprocess.</p>
-            </details>
-            <details>
-                <summary>Kan jag ändra min order efter att jag lagt den?</summary>
-                <p>Ja, kontakta vår kundtjänst snarast för att göra ändringar i din order.</p>
-            </details>
-            <details>
-                <summary>Hur kan jag spåra min beställning?</summary>
-                <p>Du får en spårningslänk via e-post när din beställning har skickats.</p>
-            </details>
-            <details>
-                <summary>Det står att ni har öppetider, har ni en fysisk butik?</summary>
-                <p>Nej</p>
-            </details>
+            <div class="card" style="margin-top: 2em; background-color: #ffffff; padding: 1em; border-radius: 8px;">
+                <section>
+                    <h2>FAQ</h2>
+                    <details>
+                        <summary>Hur lång tid tar leverans?</summary>
+                        <p>Leverans tar vanligtvis 2-5 arbetsdagar.</p>
+                    </details>
+                    <details>
+                        <summary>Vilka betalningsmetoder accepterar ni?</summary>
+                        <p>Vi accepterar kortbetalning, PayPal och Swish.</p>
+                    </details>
+                    <details>
+                        <summary>Hur returnerar jag en produkt?</summary>
+                        <p>Kontakta vår kundtjänst för att starta en returprocess.</p>
+                    </details>
+                    <details>
+                        <summary>Kan jag ändra min order efter att jag lagt den?</summary>
+                        <p>Ja, kontakta vår kundtjänst snarast för att göra ändringar i din order.</p>
+                    </details>
+                    <details>
+                        <summary>Hur kan jag spåra min beställning?</summary>
+                        <p>Du får en spårningslänk via e-post när din beställning har skickats.</p>
+                    </details>
+                    <details>
+                        <summary>Det står att ni har öppetider, har ni en fysisk butik?</summary>
+                        <p>Nej</p>
+                    </details>
+                </section>
+            </div>
         </div>
     </main>
 
-    <footer>
-        <p>Pen Store &copy; 2024</p>
-        <a href="index.html">Hem</a>
-        <a href="produktSida.html">Produkter</a>
-        <a href="#">Kontakta oss</a>
+    <footer id="footer">
+        <div id="Styling-div" class="Styling-div"></div>
+        <ul id="footer-list">
+            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=13912&format=png&color=000000"></a></li>
+            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"></a></li>
+            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=YfCbGWCWcuar&format=png&color=000000"></a></li>
+        </ul>
+        <p class="footer-text">Pen Store &copy; 2024</p>
     </footer>
+
+    <script type="module" src="../JS/Main.js"></script>
 </body>
 </html>
