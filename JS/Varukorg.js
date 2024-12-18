@@ -58,7 +58,7 @@ kassalista.innerHTML += rows;
 Totalcheckout.innerHTML = `
     <tr class="Total-price">
         <td><strong>Total:</strong></td>
-        <td class="grand-total"><strong>${totalcheckoutPrice.toFixed(2)} kr</strong></td>
+        <td class="grand-total">${totalcheckoutPrice.toFixed(2)} kr</td>
     </tr>
 `;
 

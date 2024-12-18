@@ -1,55 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #fef6f9;
-    color: #555;
-    line-height: 1.6;
-}
-
-header {
-    background: #bde0fe;
-    color: #fff;
-    padding: 1em 2em;
-}
-
-#navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#navbar .logo-container {
-    background-color: #ffffff;
-    padding: 0.5em;
-    border-radius: 8px;
-}
-
-#navbar img {
-    max-height: 50px;
-    display: block;
-}
-
-#nav-list {
-    list-style: none;
-    display: flex;
-    gap: 1.5em;
-}
-
-.Länkar {
-    text-decoration: none;
-    color: #6a5acd;
-    transition: color 0.3s ease;
-    font-weight: bold;
-}
-
-.Länkar:hover {
-    color: #9d8df1;
-}
+@import url(../CSS/style.css);
 
 main {
     padding: 2em;
@@ -77,7 +26,7 @@ main {
     gap: 1em;
 }
 
-h2 {
+.h2-adj {
     margin-bottom: 1em;
     color: #444;
 }
@@ -113,24 +62,6 @@ details {
 details summary {
     font-weight: bold;
     padding: 0.5em 0;
-}
-
-footer {
-    text-align: center;
-    padding: 1em;
-    background-color: #bde0fe;
-    color: #555;
-    margin-top: 2em;
-}
-
-footer a {
-    color: #6a5acd;
-    text-decoration: none;
-    margin: 0 0.5em;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
