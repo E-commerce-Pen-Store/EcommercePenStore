@@ -4,61 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kundtjänst</title>
-    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/Kontakt.css">
-    <style>
-        .neutral-button {
-            background-color: #ddd;
-            color: #333;
-            border: 1px solid #ccc;
-            padding: 0.5em 1em;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .neutral-button:hover {
-            background-color: #ccc;
-        }
-    </style>
 </head>
 <body>
 
     <header>  
+        <div id="Styling-div"></div>
         <nav id="navbar">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="../IMG/Icons/bitmap.png" alt="Logo" id="Logotype" />
-                </a>
-                <h2 class="logo-text">Pen store</h2>
-            </div>
+            <img src="../IMG/Icons/bitmap.png" alt="Logo" id="Logotype"/>
+            <h2 id="logo-text">Pen store</h2>
             <ul id="nav-list">
                 <li><a href="index.html" class="Länkar Länkett"><strong>Hem</strong></a></li>
                 <li><a href="AllaProdukter.html" class="Länkar Länktvå"><strong>Produkter</strong></a></li>
-                <li><a href="Kontakt.html" class="Länkar Länktre selected"><strong>Kontakta oss</strong></a></li>
-                <li><a href="Varukorg.html" id="varu-position">
-                    <span class="material-symbols-outlined item-shoppingcart">
-                      shopping_cart
-                    </span>
-                    <span class="cart-count" id="cart-count">0</span>
-                </a></li>
+                <li><a href="Kontakt.html" class="selected Länkar Länktre"><strong>Kontakta oss</strong></a></li>
+                <li ><a href="Varukorg.html" id="varu-position"><span class="material-symbols-outlined item-shoppingcart">
+                  shopping_cart
+                  </span>
+                  <span class="cart-count" id="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main style="padding: 2em;">
+    <main>
         <div class="contact-container" style="background-color: #f4f4f9; padding: 2em; border-radius: 8px;">
             <div style="display: flex; justify-content: space-between; gap: 2em;">
 
                 <div class="card contact-info" style="flex: 1; background-color: #ffffff; padding: 1em; border-radius: 8px;">
                     <section>
-                        <h2>Kontaktinformation</h2>
+                        <h2 class="h2-adj">Kontaktinformation</h2>
                         <ul style="list-style: none;">
                             <li>Email: <a href="#">support@fake-email.skovde</a></li>
                             <li>Telefon: +46 123 456 789</li>
                             <li>Adress: Skövdegatan 2B, 54 321 Skövde</li>
                         </ul>
-                        <h2>Öppettider</h2>
+                        <h2 class="h2-adj">Öppettider</h2>
                         <p>Måndag - Fredag: 8:00 - 18:00</p>
                         <p>Lördag: 10:00 - 16:00</p>
                         <p>Söndag: Stängt</p>
@@ -67,7 +46,7 @@
 
                 <div class="card" style="flex: 1; background-color: #ffffff; padding: 1em; border-radius: 8px;">
                     <section>
-                        <h2>Kontaktformulär</h2>
+                        <h2 class="h2-adj">Kontaktformulär</h2>
                         <form action="#" method="post">
                             <label for="name">Namn:</label><br>
                             <input type="text" id="name" name="name" required><br>
@@ -83,7 +62,7 @@
 
             <div class="card" style="margin-top: 2em; background-color: #ffffff; padding: 1em; border-radius: 8px;">
                 <section>
-                    <h2>FAQ</h2>
+                    <h2 class="h2-adj">FAQ</h2>
                     <details>
                         <summary>Hur lång tid tar leverans?</summary>
                         <p>Leverans tar vanligtvis 2-5 arbetsdagar.</p>
@@ -116,11 +95,11 @@
     <footer id="footer">
         <div id="Styling-div" class="Styling-div"></div>
         <ul id="footer-list">
-            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=13912&format=png&color=000000"></a></li>
-            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"></a></li>
-            <li class="Länkar-container"><a class="Länkar" href="#"><img src="https://img.icons8.com/?size=100&id=YfCbGWCWcuar&format=png&color=000000"></a></li>
+            <li><a class="Länkarfooter" href="#"><img src="https://img.icons8.com/?size=100&id=13912&format=png&color=000000"></a></li>
+            <li><a class="Länkarfooter" href="#"><img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"></a></li>
+            <li><a class="Länkarfooter" href="#"><img src="https://img.icons8.com/?size=100&id=YfCbGWCWcuar&format=png&color=000000"></a></li>
         </ul>
-        <p class="footer-text">Pen Store &copy; 2024</p>
+        <p class="footer-text">Pen Store ©</p>
     </footer>
 
     <script type="module" src="../JS/Main.js"></script>
