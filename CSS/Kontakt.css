@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fef6f9;
+    color: #555;
+    line-height: 1.6;
+}
+
+header {
+    background: #bde0fe;
+    color: #fff;
+    padding: 1em 2em;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar .logo-container {
+    background-color: #ffffff;
+    padding: 0.5em;
+    border-radius: 8px;
+}
+
+#navbar img {
+    max-height: 50px;
+    display: block;
+}
+
+#nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+.Länkar {
+    text-decoration: none;
+    color: #6a5acd;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.Länkar:hover {
+    color: #9d8df1;
+}
+
+main {
+    padding: 2em;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.card {
+    background: #fffcf2;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #e2f0cb;
+    padding: 1em;
+    border-radius: 8px;
+    gap: 1em;
+}
+
+h2 {
+    margin-bottom: 1em;
+    color: #444;
+}
+
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.neutral-button {
+    background-color: #ffadad;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.neutral-button:hover {
+    background-color: #ff8585;
+}
+
+details {
+    margin: 1em 0;
+    cursor: pointer;
+}
+
+details summary {
+    font-weight: bold;
+    padding: 0.5em 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #bde0fe;
+    color: #555;
+    margin-top: 2em;
+}
+
+footer a {
+    color: #6a5acd;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
