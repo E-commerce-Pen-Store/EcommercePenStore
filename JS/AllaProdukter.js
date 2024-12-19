@@ -1,22 +1,27 @@
-
 import { getData } from './api.js';
 import { addToCart, cartCount } from './addedproducts.js';
 
+const produktLista = document.getElementById("produkt-list");
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
 
-const produktLista = document.getElementById("produkt-list")
-async function renderProdukter() {
-    const produkt = await getData(`http://ecommerce-api-penstore.vercel.app/products`)
+async function renderProdukter(filterName = "") {
+    const produkter = await getData(`http://ecommerce-api-penstore.vercel.app/products`);
 
-    if (!produkt) {
-        throw new Error("Cannot render right now!")
-        return
-
+    if (!produkter) {
+        throw new Error("Cannot render right now!");
+        return;
     }
 
-    produkt.forEach((item) => {
+    produktLista.innerHTML = "";
 
-        const produktElement = document.createElement("div")
-        produktElement.className = "produktdiv"
+    produkter.forEach((item) => {
+        if (filterName && !item.name.toLowerCase().includes(filterName.toLowerCase())) {
+            return;
+        }
+
+        const produktElement = document.createElement("div");
+        produktElement.className = "produktdiv";
 
         produktElement.innerHTML = `
         <div class="produktItem">
@@ -30,17 +35,15 @@ async function renderProdukter() {
 
             </div>
         </div>
-        `
+        `;
 
-        produktLista.appendChild(produktElement)
-
-
+        produktLista.appendChild(produktElement);
     });
 }
 
-renderProdukter()
+searchButton.addEventListener("click", () => {
+    const searchTerm = searchInput.value.trim();
+    renderProdukter(searchTerm);
+});
 
-
-
-
-
+renderProdukter();

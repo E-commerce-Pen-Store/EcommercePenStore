@@ -94,3 +94,33 @@
     margin: 0 10px;
 
 }
+
+/*----Sök-knappen----*/
+
+#search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    gap: 0.5em;
+}
+
+#search-input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+#search-button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #EAE7DC;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #ccc;
+}
